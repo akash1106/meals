@@ -6,11 +6,11 @@ import Favorites from './components/Favorites';
 import Models from './components/Models';
 
 function App() {
-  const {showModel}=useGlobalContext()
+  const {showModel,favorite}=useGlobalContext()
   return (
     <div className="App">
       <Search/>
-      {/* <Favorites/> */}
+      {favorite.length>0 && <Favorites/>}
       <Meals/>
       {showModel && <Models/>}
     </div>
